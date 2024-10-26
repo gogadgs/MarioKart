@@ -1,28 +1,10 @@
 import { playRacerEngine } from "./playRacerEngine.js";
 import { declareWinner } from "./declareWinner.js";
-import readline from "readline";
+
+import { rl } from "./rl.js";
 import { escolherPersonagem } from "./personagens.js";
+import { getEntrada } from "./getEntrada.js";
 
-
-
-
-
-
-
-
-
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-function getEntrada(message) {
-    return new Promise((resolve) => {
-        rl.question(message, (entrada) => {
-            resolve(entrada);
-        });
-    });
-}
 
 (async function main() {
     const entrada1 = await getEntrada("Escolha o personagem do player 1: \n1 - Mario\n2 - Luigi\n3 - Princesa\n4 - Kopa\n5 - Browser\n");
